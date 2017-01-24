@@ -7,11 +7,10 @@ class Cloth extends Product
 {
 	private $brand;
 	
-	function __construct($idNum,$productName,$productPrice,$brandCloth)
-	{
-		parent::__construct($idNum,$productName,$productPrice);
-		$this->setBrand($brandCloth);
-
+	public function __construct($id){
+		parent::__construct($id,'cloths');
+		$data = $this->getData($id);
+		$this->brand=$data['brand'];
 	}
 	public function getBrand(){
 		return $this->brand;

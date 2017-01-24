@@ -7,10 +7,11 @@ class Vegetable extends Product
 {
 	private $productorName;
 	private $harvestedAt;
-	public function __construct($idNum,$productName,$productPrice,$nomProd,$date){
-			parent::__construct($idNum,$productName,$productPrice);			
-			$this->setProductorName($nomProd);				
-			$this->setHarvestedAt($date);
+	public function __construct($id){
+			parent::__construct($id,'vegetables');
+			$data = $this->getData($id);			
+			$this->productorName=$data['productorName'];			
+			$this->harvestedAt=$data['harvestedAt'];
 	}
 	public function getProductorName(){
 		return $this->productorName;

@@ -23,9 +23,9 @@
 		<td><?= $keyObj->getProductId();?></td>
 		<td><?=$keyObj->getProductName();?></td>
 		<td><?=$keyObj->getProductPrice();?></td>
-		<td><?=(method_exists($keyObj,'getProductorName'))?$keyObj->getProductorName():"";?></td>
-		<td><?=(method_exists($keyObj,'getHarvestedAt'))?$keyObj->getHarvestedAt():"";?></td>
-		<td><?=(method_exists($keyObj,'getBrand'))?$keyObj->getBrand():"";?></td>		
+		<td><?=(method_exists($keyObj,'getProductorName'))?$keyObj->getProductorName(): null;?></td>
+		<td><?=(method_exists($keyObj,'getHarvestedAt'))?$keyObj->getHarvestedAt(): null;?></td>
+		<td><?=(method_exists($keyObj,'getBrand'))?$keyObj->getBrand(): null;?></td>		
 	</tr>
 <?php endforeach?>
 </table>

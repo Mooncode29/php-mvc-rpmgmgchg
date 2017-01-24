@@ -2,19 +2,22 @@
 /**
 * 
 */
-
+require_once 'DB.php';
 class Product extends DB {
 	private $id;
 	private $name;
 	private $price;
 	
-	public function __construct($id){
-		parent::__construct('products');
-		$data = parent::get($id-1);
+	public function __construct($id,$childClass){
+		parent::__construct($childClass);
+		$data = $this->getData($id);
 		$this->id=$data['id'];
 		$this->name=$data['name'];
 		$this->price=$data['price'];
 		
+	}
+	public function getData($id){
+		return parent::get($id);
 	}
 	public function getProductId(){
 		return $this->id;
